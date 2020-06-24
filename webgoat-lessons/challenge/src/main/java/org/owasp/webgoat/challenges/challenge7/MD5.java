@@ -168,13 +168,10 @@ public class MD5 {
         try {
             InputStream is = new FileInputStream(f);
             byte[] hash = getHash(is);
+            return hash;
         }
-        finally {
-            if (is!=null) {
-                is.close();
-            }
-        }
-        return hash;
+        catch(IOException e) {          
+        }        
     }
 
     /**
@@ -190,10 +187,7 @@ public class MD5 {
             InputStream is = new FileInputStream(f);
             byte[] hash = getHash(is);
         }
-        finally {
-            if (is!=null) {
-                is.close();
-            }
+        catch(IOException e) {
         }
     }
 
