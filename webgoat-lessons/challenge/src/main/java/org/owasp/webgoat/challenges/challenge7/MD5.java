@@ -181,6 +181,7 @@ public class MD5 {
      */
     public static String getHashString(File f) throws IOException {
         InputStream is = new FileInputStream(f);
+        FileInputStream.close()
         String hash = getHashString(is);
         is.close();
         return hash;
