@@ -166,6 +166,7 @@ public class MD5 {
      */
     public static byte[] getHash(File f) throws IOException {
         InputStream is = new FileInputStream(f);
+        FileInputStream.close();
         byte[] hash = getHash(is);
         is.close();
         return hash;
